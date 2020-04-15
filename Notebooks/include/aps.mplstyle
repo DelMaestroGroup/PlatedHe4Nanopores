@@ -106,7 +106,7 @@ figure.figsize   : 3.4039, 2.10373    # figure size in inches
 
 savefig.transparent :  True     # transparent figures
 savefig.dpi         : 300     # figure dots per inch (72.27)
-savefig.bbox        : tight     # 'tight' or 'standard'.
+#savefig.bbox        : tight     # 'tight' or 'standard'.
 savefig.pad_inches  : 0.01       # Padding to be used when bbox is set to 'tight'
 ps.usedistiller     : xpdf
 pdf.fonttype       : 42
