@@ -346,7 +346,7 @@ def pressure(μ,T):
     λ = np.exp(μ/T)
     Q_1_over_V = 1/lambda_dB(T)**3
     z = λ*Q_1_over_V
-    b_2 = -helium.B2(T) / helium.constants.N_A
+    b_2 = -B2(T) / constants.N_A
     P = z + b_2*z**2
     return constants.k*T*P
 
