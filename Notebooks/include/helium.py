@@ -288,7 +288,27 @@ def lambda_dB(T, mass=const['mass']):
     return constants.h / np.sqrt(2.0*constants.pi*mass*constants.k*T)
 
 # ---------------------------------------------------------------------------------
-def B2(T):
+def B2(T,use_donnelly = True, use_DCGT1=False):
+    '''Second virial coefficient for helium in m^3/mol (see https://doi.org/10.1088/0026-1394/46/5/017)'''
+    if use_donnelly:
+        return B2_donnelly(T)
+    
+    b1 = 18.5604
+    b2 = -2.22170
+    b3 = -412.863
+    b4 = -0.03094
+    B = b1 + b2/np.sqrt(T**3) + b3/T + b4*T
+    
+    if use_DCGT1:
+        b1 = 18.2665
+        b2 = -10.2405
+        b3 = -407.939
+        b4 = -0.02612
+        B = b1 + b2/np.sqrt(T**3) + b3/T + b4*T
+    return B/(100**3)
+
+# ---------------------------------------------------------------------------------
+def B2_donnelly(T):
     '''Second virial coefficient for helium in m^3/mol'''
     a = 2.305E-5 #[m^3/mol]
     b = 4.2177E-4 #[m^3 K/mol]
@@ -310,7 +330,7 @@ def chemical_potential(P,T):
     return t1+t2
 
 # ---------------------------------------------------------------------------------
-def pressure(mu,T):
+def pressure_old(mu,T):
     '''Pressure at SVP in Pa as a function of chemical potential (in K) and
     temperature.
     '''
@@ -318,6 +338,17 @@ def pressure(mu,T):
     Pmu = pynverse.inversefunc(chemical_potential, args=(T),domain=[1E-200,None], 
                                accuracy=8)
     return Pmu(mu)
+
+# ---------------------------------------------------------------------------------
+def pressure(μ,T):
+    """ Pressure at SVP in Pa as a function of chemical potential (in K) and
+    temperature."""
+    λ = np.exp(μ/T)
+    Q_1_over_V = 1/lambda_dB(T)**3
+    z = λ*Q_1_over_V
+    b_2 = -helium.B2(T) / helium.constants.N_A
+    P = z + b_2*z**2
+    return constants.k*T*P
 
 # ---------------------------------------------------------------------------------
 def xi(T):
