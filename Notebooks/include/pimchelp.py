@@ -126,17 +126,28 @@ def getParFromPIMCFile(fileName):
     return dataMap
 
 # -----------------------------------------------------------------------------
-def getHeadersFromFile(fileName, skipLines=0): 
+def getHeadersFromFile(fileName, skipLines=0, getEstimatorInfo=False): 
     ''' Get the data column headers from a PIMC output file. '''
 
     with open(fileName,'r') as inFile:
         inLines = inFile.readlines();
         n = skipLines
         if 'PIMCID' in inLines[n]:
-            headers = inLines[n+1].split()
+            n += 1
+
+        if 'ESTINF' in inLines[n]:
+            # determine if we want to extract the header information
+            if getEstimatorInfo:
+                headers = []
+                headers.append(inLines[n])
+                headers.append(inLines[n+1].split())
+                headers[1].pop(0)
+            else:
+                headers = inLines[n+1].split()
+                headers.pop(0)
         else:
             headers = inLines[n].split()
-        headers.pop(0)
+            headers.pop(0)
 
     return headers
 
@@ -424,6 +435,29 @@ class PIMCResults:
     def epdata(self,*param):
         return self.x(*param),self.y(*param),self.Δy(*param)
     
+def getParameterMap(logName): 
+    '''Given a log file name, return the parameter map. '''
+
+    # Get the values of all simulation parameters
+    paramsMap = {}
+    params = False
+    with open(logName, 'r') as logFile:
+        for line in logFile:
+            if 'Begin Simulation Parameters' in line:
+                params = True
+            elif 'End Simulation Parameters' in line:
+                break
+
+            if params and ':' in line:
+                keyVal = line.split(':')
+                paramsMap[keyVal[0].strip()] = keyVal[1].strip()
+
+    # Add an element to the parameter map for the linear dimension (Lz) of
+    # the container
+    paramsMap['Container Length'] = paramsMap['Container Dimensions'].split('x')[-1]
+
+    return paramsMap
+
 # -------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
@@ -537,8 +571,8 @@ class PimcHelp:
 
         # Otherwise we just go through and get the ID's we need
         else:
-            for id in idList: 
-                fileLoc = '%s%s-%s-*%s.dat' % (self.baseDir,self.prefix,ftype,id)
+            for cid in idList: 
+                fileLoc = '%s%s-%s-*%s.dat' % (self.baseDir,self.prefix,ftype,cid)
                 fileNames.extend(glob.glob(fileLoc))
 
         return sorted(fileNames)
@@ -745,7 +779,7 @@ class VectorReduce:
             self.numParams[parName] = len(set(parVals))
 
         # create an array with the fixed parameters
-        self.fixParNames = self.param_.keys()
+        self.fixParNames = list(self.param_.keys())
         self.fixParNames.remove(self.reduceLabel)
         
         # find the name/label of the changing parameter
@@ -829,10 +863,10 @@ class VectorReduce:
     def getReduceLabel(self,reduceIndex):
         '''Construct a label for the reduce parameter.'''
 
-        labName = self.descrip.paramShortName(self.reduceLabel)
-        labFormat = self.descrip.paramFormat(self.reduceLabel)
+        labName = self.descrip.paramShortName[self.reduceLabel]
+        labFormat = self.descrip.paramFormat[self.reduceLabel]
         labValue = self.param_[self.reduceLabel][reduceIndex]
-        labUnit = self.descrip.paramUnit(self.reduceLabel)
+        labUnit = self.descrip.paramUnit[self.reduceLabel]
 
         return labName + ' = ' + labFormat % labValue + ' ' + labUnit
 
@@ -931,6 +965,7 @@ class Description:
                                   'pair':'Pair Correlation Function [units]',
                                   'radial':r'Radial Density $[\mathrm{\AA}^{-3}]$',
                                   'number':'Number Distribution',
+                                  'planedensity':'Density $[\mathrm{\AA}^{-3}]$',
                                   'obdm':'One Body Density Matrix',
                                   'rho_s/rho':'Superfluid Fraction',
                                   'Area_rho_s':'Area Superfluid Fraction',
@@ -966,6 +1001,7 @@ class Description:
         self.estimatorXLongName = {'number':'Number of Particles',
                                    'pair':'r  %s' % lengthTUnit,
                                    'obdm':'r  %s' % lengthTUnit,
+                                   'planedensity': 'Gridbox Number',
                                    'radial':'r  %s' % lengthTUnit,
                                    'radwind':'r  %s' % lengthTUnit,
                                    'radarea':'r  %s' % lengthTUnit}
