@@ -1,5 +1,6 @@
 # Dimensional Reduction of Helium-4 Inside Argon Plated MCM-41 Nanopores
 Nathan Nichols, Timothy R. Prisk, Garfield Warren, Paul Sokol, and Adrian Del Maestro
+
 FIXME [arXiv:1602.04225](https://arxiv.org/abs/1602.04225)
 
 ### Abstract
