@@ -30,3 +30,44 @@ The creation of these materials was supported in part by the National Science Fo
 #### Figure 01: Experimental adsorption isotherms
 <img src="Notebooks/plots/He_Ar_MCM41_isotherm.svg" width="400px">
 
+#### Figure 02: Neutron scattering
+<img src="Notebooks/plots/scattering.svg" width="400px">
+
+#### Figure 03: Projection of MCM-41 supercell
+<img src="Notebooks/plots/mcm41_crystal_structure.svg" width="400px">
+
+#### Figure 04: Effective manybody potential
+<img src="Notebooks/plots/manybodyPotential.svg" width="400px">
+
+#### Figure 05a: Helium interacting with argon shell
+<img src="Notebooks/plots/effectivePotential.svg" width="400px">
+
+#### Figure 05b: Effect of density on minima location and potential well depth
+<img src="Notebooks/plots/effectivePotential_b.svg" width="400px">
+
+#### Figure 06: Relationship between pressure and chemical potential for bulk helium
+<img src="Notebooks/plots/pressure_vs_chemical_potential.svg" width="400px">
+
+#### Figure 07: QMC adsorption isotherms
+<img src="Notebooks/plots/filling_the_pore.svg" width="400px">
+
+#### Figure 08: Radial density of helium in Ar preplated MCM-41
+<img src="Notebooks/plots/radialDensity.svg" width="400px">
+
+#### Figure 09: Linear density of inner core and coverage of layers
+<img src="Notebooks/plots/linearDensity.svg" width="400px">
+
+#### Figure 10: Central slice of confinement potential for helium inside MCM-41 
+<img src="Notebooks/plots/cylindrical_potential_effective_parameters_z0.svg" width="400px">
+
+#### Figure 11: Comparison of fitting methods to determine effective potential 
+<img src="Notebooks/plots/cylindrical_potential_effective_parameters.svg" width="400px">
+
+#### Figure 12: Finite size effects on radial density 
+<img src="Notebooks/plots/finite_size_scaling_radial_density.svg" width="400px">
+
+#### Figure 13: Finite size effects on inner core
+<img src="Notebooks/plots/finite_size_scaling_inner_core.svg" width="400px">
+
+#### Figure 14: Effects of the finite imaginary time step
+<img src="Notebooks/plots/EoN_vs_tau.svg" width="400px">
