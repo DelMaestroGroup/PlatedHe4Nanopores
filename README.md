@@ -22,9 +22,25 @@ with the appropriate [Jupyter kernel](https://github.com/JuliaLang/IJulia.jl) in
 Additional dependencies may be easily determined on a per notebook basis.
 
 ### Support
-The creation of these materials was supported in part by the National Science Foundation under Award Nos. DMR-1808440 and DMR-1809027.
+This research was supported in part by the National Science Foundation (NSF)
+under award Nos. DMR-1808440 and DMR-1809027. 
+We acknowledge the support of the National Institute of Standards and Technology,
+U.S. Department of Commerce, in providing the neutron research facilities
+used in this work.
+Computations were performed on the Vermont Advanced Computing Core supported in
+part by NSF award No. OAC-1827314 and IU Big Red Karst.  This work used the
+Extreme Science and Engineering Discovery Environment (XSEDE), which is
+supported by National Science Foundation grant number ACI-1548562. XSEDE
+resources used include Bridges at Pittsburgh Supercomputing,
+Comet at San Diego Supercomputer Center, and Open Science Grid (OSG)
+through allocations TG-DMR190045 and TG-DMR190101.  OSG is supported by the
+National Science Foundation award 1148698, and the U.S. Department of Energy's
+Office of Science.
 
-[<img width="100px" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png">](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808440&HistoricalAwards=false)
+[<img height="150px" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png">](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808440&HistoricalAwards=false)
+[<img height="150px" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg">](https://www.nist.gov/)
+[<img height="150px" src="https://www.delmaestro.org/images/vacc_logo.jpg">](https://www.uvm.edu/vacc)
+[<img height="150px" src="https://www.xsede.org/image/image_gallery?uuid=5787b7c0-b9e5-4eaa-8f6c-815ebf39eb08&groupId=10157&t=1369258426992">](https://www.xsede.org/)
 
 ### Figures
 
