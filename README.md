@@ -1,7 +1,7 @@
 # Dimensional Reduction of Helium-4 Inside Argon Plated MCM-41 Nanopores
 Nathan Nichols, Timothy R. Prisk, Garfield Warren, Paul Sokol, and Adrian Del Maestro
 
-FIXME [arXiv:1602.04225](https://arxiv.org/abs/1602.04225)
+<!--FIXME [arXiv:1602.04225](https://arxiv.org/abs/1602.04225)-->
 
 ### Abstract
 The angstrom-scale coherence length describing the superfluid wavefunction of $^4$He at low temperatures has prevented its preparation in a truly one-dimensional geometry.  Mesoporous ordered silica-based structures such as the molecular sieve MCM-41 offer a promising avenue towards physical confinement, but the minimal pore diameters that can be chemically synthesized have proven to be too large to reach the quasi-one-dimensional limit.  We present an active nano-engineering approach to this problem by pre-plating MCM-41 with a single, well controlled layer of Ar gas before filling the resulting pores with helium.  The experimental adsorption isotherms and neutron scattering results are utilized to inform large scale quantum Monte Carlo simulations. The results demonstrate angstrom and kelvin scale tunability of the effective confinement potential experienced by $^4$He atoms inside the MCM-41, with the Ar layer reducing the diameter of the confining media into a regime where a number of solid layers surround a one-dimensional quantum liquid.
@@ -38,7 +38,7 @@ National Science Foundation award 1148698, and the U.S. Department of Energy's
 Office of Science.
 
 [<img height="150px" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png">](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808440&HistoricalAwards=false)
-[<img height="150px" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg">](https://www.nist.gov/)
+<!--[<img height="150px" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg">](https://www.nist.gov/)-->
 [<img height="150px" src="https://www.delmaestro.org/images/vacc_logo.jpg">](https://www.uvm.edu/vacc)
 [<img height="150px" src="https://www.xsede.org/image/image_gallery?uuid=5787b7c0-b9e5-4eaa-8f6c-815ebf39eb08&groupId=10157&t=1369258426992">](https://www.xsede.org/)
 
