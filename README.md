@@ -41,7 +41,7 @@ National Science Foundation award 1148698, and the U.S. Department of Energy's
 Office of Science.
 
 [<img height="150px" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png">](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808440&HistoricalAwards=false)
-[<img height="150px" src="https://www.delmaestro.org/images/vacc_logo.jpg">](https://www.uvm.edu/vacc)
+[<img height="150px" src="https://delmaestro.org/images/vacc_logo.jpg">](https://www.uvm.edu/vacc)
 [<img height="150px" src="https://www.xsede.org/image/image_gallery?uuid=5787b7c0-b9e5-4eaa-8f6c-815ebf39eb08&groupId=10157&t=1369258426992">](https://www.xsede.org/)
 
 ### Figures
